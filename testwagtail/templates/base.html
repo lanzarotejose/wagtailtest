@@ -25,7 +25,7 @@
 
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/testwagtail.css' %}">
-
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
@@ -34,7 +34,10 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
+        <main>
+            {% block content %}
+            {% endblock%}
+        </main>
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/testwagtail.js' %}"></script>
@@ -43,6 +46,7 @@
         {# Override this in templates to add extra javascript #}
         {% endblock %}
 
+        <hr>
         {% include "footer.html" %}
     </body>
 
